@@ -30,7 +30,7 @@
 									<thead>
 										<tr>
 											<th>Cod. Cliente</th>
-											<th>Cédula</th>
+											<th>Cédula/RUC</th>
 											<th>Nombre y Apellido</th>
 											<th>Dirección</th>
 											<th>Estado</th>
@@ -75,8 +75,8 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-md-4 form-group">
-							<label>Cédula</label>
-							<input type="number" name="txtCedula" id="txtCedula" class="form-control" min="0">
+							<label>Cédula/RUC</label>
+							<input type="text" name="txtCedula" id="txtCedula" class="form-control" min="0">
 						</div>
 						<div class="col-md-4 form-group">
 							<label>Nombres y Apellidos</label>

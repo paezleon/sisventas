@@ -47,7 +47,7 @@ class ClientesController extends CI_Controller {
 			} else {
 				$this->session->set_flashdata('alerta', 'Los campos Cédula, Nombres y Apellidos, son obligatorios');
 			}
-			//redirect(base_url('clientes'),'refresh');
+			redirect(base_url('clientes'),'refresh');
 		} else {
 			redirect(base_url('cerrar_sesion'),'refresh');
 		}	

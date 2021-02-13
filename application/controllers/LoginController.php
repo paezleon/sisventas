@@ -59,7 +59,7 @@ class LoginController extends CI_Controller {
 	public function cerrarSesion()
 	{
 		$this->session->sess_destroy();
-		$this->index();
+		redirect(base_url('inicio'),'refresh');
 	}
 
 }

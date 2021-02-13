@@ -11,13 +11,13 @@
 							<a href="<?= base_url('empleados') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-users"></i> | EMPLEADOS</h2></button></a>
 						</div>
 						<div class="col-md-6 form-group">
-							<a href="<?= base_url('clientes') ?>" style="text-decoration: none"><button type="button" class="btn btn-info btn-lg btn-block"><h2><i class="fas fa-people-carry"></i> | CLIENTES</h2></button></a>
+							<a href="<?= base_url('clientes') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-people-carry"></i> | CLIENTES</h2></button></a>
 						</div>
 						<div class="col-md-6 form-group">
-							<a href="<?= base_url('productos') ?>" style="text-decoration: none"><button type="button" class="btn btn-success btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | PRODUCTOS</h2></button></a>
+							<a href="<?= base_url('productos') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | PRODUCTOS</h2></button></a>
 						</div>
 						<div class="col-md-6 form-group">
-							<a href="<?= base_url('nuevaventa') ?>" style="text-decoration: none"><button type="button" class="btn btn-success btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | VENTAS</h2></button></a>
+							<a href="<?= base_url('nuevaventa') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | VENTAS</h2></button></a>
 						</div>
 					</div>
 				</div>

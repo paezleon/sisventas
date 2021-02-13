@@ -31,7 +31,8 @@
 										<tr>
 											<th>Cod. Producto</th>
 											<th>Nombre</th>
-											<th>Precio</th>
+											<th>Precio Compra</th>
+											<th>Precio Venta</th>
 											<th>Stock</th>
 											<th>Estado</th>
 											<th>Acción</th>
@@ -42,7 +43,8 @@
 											<tr>
 												<td><?= $f->idproducto ?></td>
 												<td><?= $f->nombres?></td>
-												<td><?= $f->precio ?></td>
+												<td><?= $f->preciocompra ?></td>
+												<td><?= $f->precioventa ?></td>
 												<td><?= $f->stock?></td>
 												<td><?php if ($f->estado=="D"): ?>
 												DISPONIBLE <?php else: ?> NO DISPONIBLE

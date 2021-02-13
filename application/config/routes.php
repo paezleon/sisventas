@@ -53,6 +53,7 @@ $route['default_controller'] = 'LoginController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['inicio'] = 'LoginController';
 $route['comprobar_credenciales'] = 'LoginController/comprobarCredenciales';
 $route['cerrar_sesion'] = 'LoginController/cerrarSesion';
 $route['empleados'] = 'EmpleadosController';
