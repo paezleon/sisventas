@@ -45,6 +45,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#">Ventas</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('cajas') ?>">Cajas</a>
+				</li>
 			</ul>
 			<span class="navbar-text">
 				<a href="<?= base_url('cerrar_sesion') ?>"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
