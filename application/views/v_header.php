@@ -43,7 +43,7 @@
 					<a class="nav-link" href="<?= base_url('productos') ?>">Productos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Ventas</a>
+					<a class="nav-link" href="<?= base_url('ventas') ?>">Ventas</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('cajas') ?>">Cajas</a>
