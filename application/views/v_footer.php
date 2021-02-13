@@ -193,14 +193,16 @@
 		var v = $(this).val();
 		var id = v.split('?')[0];
 		var no = v.split('?')[1];
-		var pr = v.split('?')[2];
+		var pc = v.split('?')[2];
 		var st = v.split('?')[3];		
 		var es = v.split('?')[4];
+		var pv = v.split('?')[5];
 		$("#txtNombre").val(no);
 		$("#txtProductos").val(id);
-		$("#txtPrecio").val(pr);
+		$("#txtPrecioCompra").val(pc);
 		$("#txtStock").val(st);		
 		$("#sltEstado").val(es);
+		$("#txtPrecioVenta").val(pv);
 	});
 </script>
 </body>

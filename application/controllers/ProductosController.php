@@ -25,14 +25,16 @@ class ProductosController extends CI_Controller {
 	{
 		if ($this->session->userdata('estEmpleado')=='A') {
 			$nombre 	= $this->input->post('txtNombre', TRUE);
-			$precio 	= $this->input->post('txtPrecio', TRUE);
+			$precioCompra 	= $this->input->post('txtPrecioCompra', TRUE);
+			$precioVenta 	= $this->input->post('txtPrecioVenta', TRUE);
 			$stock 		= $this->input->post('txtStock', TRUE);
 			$estado  	= $this->input->post('sltEstado', TRUE);
 			$idProducto = $this->input->post('txtProducto', TRUE);
 			if ($nombre!="") {
 				$producto = [
 				    'nombres' => mb_strtoupper($nombre),
-				    'precio' =>$precio ,
+				    'preciocompra' =>$precioCompra,
+				    'precioVenta' => $precioVenta,
 				    'stock' => $stock,
 				    'estado' => $estado, 
 				];

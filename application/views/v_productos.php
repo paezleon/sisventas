@@ -49,7 +49,7 @@
 												<td><?php if ($f->estado=="D"): ?>
 												DISPONIBLE <?php else: ?> NO DISPONIBLE
 												<?php endif ?></td>
-												<td><button type="button" class="btnProducto btn btn-info btn-sm" value="<?= $f->idproducto?>?<?= $f->nombres ?>?<?= $f->precio ?>?<?= $f->stock ?>?<?= $f->estado ?>" data-toggle="modal" data-target="#mdlProductos"><i class="fas fa-edit"></i></button></td>
+												<td><button type="button" class="btnProducto btn btn-info btn-sm" value="<?= $f->idproducto?>?<?= $f->nombres ?>?<?= $f->preciocompra ?>?<?= $f->stock ?>?<?= $f->estado ?>?<?= $f->precioventa ?>" data-toggle="modal" data-target="#mdlProductos"><i class="fas fa-edit"></i></button></td>
 											</tr>
 										<?php endforeach ?>
 									</tbody>
@@ -81,8 +81,12 @@
 							<input type="text" name="txtNombre" id="txtNombre" class="form-control" min="0">
 						</div>
 						<div class="col-md-4 form-group">
-							<label>Precio</label>
-							<input type="text" name="txtPrecio" id="txtPrecio" class="form-control">
+							<label>Precio Compra</label>
+							<input type="number" name="txtPrecioCompra" id="txtPrecioCompra" class="form-control">
+						</div>
+						<div class="col-md-4 form-group">
+							<label>Precio Venta</label>
+							<input type="number" name="txtPrecioVenta" id="txtPrecioVenta" class="form-control">
 						</div>
 						<div class="col-md-4 form-group">
 							<label>Stock</label>
