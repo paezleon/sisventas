@@ -64,3 +64,5 @@ $route['productos'] = 'ProductosController';
 $route['procesar_datos_producto'] = 'ProductosController/procesarDatosProducto';
 $route['nuevaventa'] = 'NuevaVentaController';
 $route['procesar_datos_nuevaventa'] = 'NuevaVentaController/procesarDatosNuevaventa';
+$route['cajas'] = 'CajasController';
+$route['procesar_datos_caja'] = 'CajasController/procesarDatosCaja';

@@ -19,17 +19,6 @@ class NuevaVentaController extends CI_Controller {
 		} else {
 			redirect(base_url('cerrar_sesion'),'refresh');
 		}
-	}public function index()	
-	{
-		if ($this->session->userdata('estEmpleado')=='A') {
-			$titulo['titulo'] = 'Nuevaventa';
-			$data['clientes'] = $this->NuevaVentaModel->obtenerNuevaVenta();
-			$this->load->view('v_header',$titulo);
-			$this->load->view('v_nueva_venta',$data);
-			$this->load->view('v_footer');
-		} else {
-			redirect(base_url('cerrar_sesion'),'refresh');
-		}
 	}
 
 }

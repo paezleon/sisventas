@@ -204,6 +204,15 @@
 		$("#sltEstado").val(es);
 		$("#txtPrecioVenta").val(pv);
 	});
+	$(".btnCaja").click(function(event) {
+		var v = $(this).val();
+		var id = v.split('?')[0];
+		var ma = v.split('?')[2];
+		var mc = v.split('?')[4];
+		$("#txtCaja").val(id);
+		$("#txtMontoApertura").val(ma);
+		$("#txtMontoCierre").val(mc);
+	});
 </script>
 </body>
 </html>

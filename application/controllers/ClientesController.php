@@ -41,7 +41,7 @@ class ClientesController extends CI_Controller {
 					$this->session->set_flashdata('correcto','Se ha registrado correctamente al cliente '.mb_strtoupper($nombre));
 				} elseif($registro==false) {
 					$this->session->set_flashdata('alerta','No se realizaron registros ni modificaciones en los datos');
-				} elseif($registro==false) {
+				} elseif($registro=='existe') {
 					$this->session->set_flashdata('alerta','Ya existe un cliente con esos datos');
 				}
 			} else {

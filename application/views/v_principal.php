@@ -17,7 +17,10 @@
 							<a href="<?= base_url('productos') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | PRODUCTOS</h2></button></a>
 						</div>
 						<div class="col-md-6 form-group">
-							<a href="<?= base_url('nuevaventa') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-boxes"></i> | VENTAS</h2></button></a>
+							<a href="<?= base_url('nuevaventa') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-money-bill-wave"></i> | VENTAS</h2></button></a>
+						</div>
+						<div class="col-md-6 form-group">
+							<a href="<?= base_url('cajas') ?>" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"><h2><i class="fas fa-cash-register"></i> |CAJAS</h2></button></a>
 						</div>
 					</div>
 				</div>
