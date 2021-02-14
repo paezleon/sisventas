@@ -35,12 +35,14 @@ class CajasController extends CI_Controller {
 				    'empleado' => $this->session->userdata('idEmpleado'),
 				];
 				$registro = $this->CajasModel->procesarDatosCaja($idCaja,$caja);
-				if ($registro==true) {
+				if ($registro=='correcto') {
 					$this->session->set_flashdata('correcto','Se ha registrado correctamente los datos de la caja '.$idCaja);
-				} elseif($registro==false) {
+				} elseif($registro=='error') {
 					$this->session->set_flashdata('alerta','No se realizaron registros ni modificaciones en los datos');
 				} elseif($registro=='existe') {
 					$this->session->set_flashdata('alerta','Ya existe una con esos datos');
+				} elseif($registro=='nocorresponde') {
+					$this->session->set_flashdata('alerta','No puede cerrar una caja que no ha sido abierta por usted');
 				}
 			} else {
 				$this->session->set_flashdata('alerta', 'Debe ingresar el monto de apertura o de cierre');

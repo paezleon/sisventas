@@ -24,7 +24,7 @@ class ProductosModel extends CI_Model {
 			}
 		}
 		if ($band==true) {
-			$this->db->where('nombres', $productos['nombres']);
+			$this->db->where('nombres', $producto['nombres']);
 			$consulta = $this->db->get('producto');
 			if ($consulta->num_rows()==0) {
 				$this->db->insert('producto', $producto);

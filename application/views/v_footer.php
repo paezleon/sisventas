@@ -197,12 +197,17 @@
 		var st = v.split('?')[3];		
 		var es = v.split('?')[4];
 		var pv = v.split('?')[5];
+		var im = v.split('?')[6];
+		var co = v.split('?')[7];
 		$("#txtNombre").val(no);
 		$("#txtProductos").val(id);
 		$("#txtPrecioCompra").val(pc);
 		$("#txtStock").val(st);		
 		$("#sltEstado").val(es);
 		$("#txtPrecioVenta").val(pv);
+		$("#imagen").html('<img src="<?= base_url() ?>assets/img/productos/'+im+'" style="height:150px">');
+		//$("#fileImagen").val(im);
+		$("#txtCodigoBarra").val(co);
 	});
 	$(".btnCaja").click(function(event) {
 		var v = $(this).val();

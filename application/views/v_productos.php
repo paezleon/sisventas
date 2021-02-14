@@ -35,6 +35,8 @@
 											<th>Precio Venta</th>
 											<th>Stock</th>
 											<th>Estado</th>
+											<th>Cod. Barra</th>
+											<th>Imagen</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
@@ -49,7 +51,11 @@
 												<td><?php if ($f->estado=="D"): ?>
 												DISPONIBLE <?php else: ?> NO DISPONIBLE
 												<?php endif ?></td>
-												<td><button type="button" class="btnProducto btn btn-info btn-sm" value="<?= $f->idproducto?>?<?= $f->nombres ?>?<?= $f->preciocompra ?>?<?= $f->stock ?>?<?= $f->estado ?>?<?= $f->precioventa ?>" data-toggle="modal" data-target="#mdlProductos"><i class="fas fa-edit"></i></button></td>
+												<td><?= $f->codigobarra ?></td>
+												<td><?php if ($f->imagen!=""): ?>
+													<img src="<?= base_url('assets/img/productos/') ?><?= $f->imagen ?>" style="height: 100px" alt="">
+												<?php endif ?></td>
+												<td><button type="button" class="btnProducto btn btn-info btn-sm" value="<?= $f->idproducto?>?<?= $f->nombres ?>?<?= $f->preciocompra ?>?<?= $f->stock ?>?<?= $f->estado ?>?<?= $f->precioventa?>?<?= $f->imagen?>?<?= $f->codigobarra?>" data-toggle="modal" data-target="#mdlProductos"><i class="fas fa-edit"></i></button></td>
 											</tr>
 										<?php endforeach ?>
 									</tbody>
@@ -63,7 +69,7 @@
 	</div>
 </div>
 
-<form action="<?= base_url('procesar_datos_producto') ?>" method="post" accept-charset="utf-8">
+<form action="<?= base_url('procesar_datos_producto') ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	<!-- Modal -->
 	<div class="modal fade" id="mdlProductos" tabindex="-1" role="dialog" aria-labelledby="mdlProductosTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -76,8 +82,14 @@
 				</div>
 				<div class="modal-body">
 					<div class="row">
+						<div class="col-md-12 text-center" id="imagen">
+							
+						</div>
+						<div class="col-md-12 form-group">
+							<input type="file" name="fileImagen" class="form-control">
+						</div>
 						<div class="col-md-4 form-group">
-							<label>Nombres</label>
+							<label>Nombre</label>
 							<input type="text" name="txtNombre" id="txtNombre" class="form-control" min="0">
 						</div>
 						<div class="col-md-4 form-group">
@@ -91,6 +103,10 @@
 						<div class="col-md-4 form-group">
 							<label>Stock</label>
 							<input type="text" name="txtStock" id="txtStock" class="form-control">
+						</div>
+						<div class="col-md-4 form-group">
+							<label>Codigo Barra</label>
+							<input type="text" name="txtCodigoBarra" id="txtCodigoBarra" class="form-control" min="0">
 						</div>						
 						<div class="col-md-4 form-group">
 							<label>Estado</label>

@@ -43,9 +43,9 @@
 											<tr>
 												<td><?= $f->idcaja ?></td>
 												<td><?= $f->fechaApertura ?></td>
-												<td><?= $f->montoApertura ?></td>
+												<td><?= str_replace(',', '.', number_format($f->montoApertura)) ?> Gs.</td>
 												<td><?= $f->fechaCierre ?></td>
-												<td><?= $f->montoCierre ?></td>
+												<td><?= str_replace(',', '.', number_format($f->montoCierre)) ?> Gs.</td>
 												<td><?= $f->nombres ?></td>
 												<td><button type="button" class="btnCaja btn btn-info btn-sm" value="<?= $f->idcaja?>?<?= $f->fechaApertura ?>?<?= $f->montoApertura ?>?<?= $f->fechaCierre ?>?<?= $f->montoCierre ?>?<?= $f->idempleado ?>" data-toggle="modal" data-target="#mdlCajas"><i class="fas fa-edit"></i></button></td>
 											</tr>

@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class CajasModel extends CI_Model {
 
 	public function __construct()
-		{
-			parent::__construct();
-			
-		}	
+	{
+		parent::__construct();
+
+	}	
 
 	public function obtenerCajas()
 	{
@@ -31,21 +31,27 @@ class CajasModel extends CI_Model {
 				$this->db->set('fechaApertura', date('Y-m-d H:i:s'));
 				$this->db->insert('caja', $caja);
 				if ($this->db->affected_rows()>0) {
-					return true;
+					return 'correcto';
 				} else {
-					return false;
+					return 'error';
 				}
 			} else {
 				return "existe";
 			}	
 		} else {
-			$this->db->where('idcaja', $idCaja);
-			$this->db->set('fechaCierre', date('Y-m-d H:i:s'));
-			$this->db->update('caja', $caja);
-			if ($this->db->affected_rows()>0) {
-				return true;
+			$registro = $consulta->result();
+			$idempleado = $registro[0]->empleado;
+			if ($idempleado==$this->session->userdata('idEmpleado')) {
+				$this->db->where('idcaja', $idCaja);
+				$this->db->set('fechaCierre', date('Y-m-d H:i:s'));
+				$this->db->update('caja', $caja);
+				if ($this->db->affected_rows()>0) {
+					return 'correcto';
+				} else {
+					return 'existe';
+				}	
 			} else {
-				return false;
+				return "nocorresponde";
 			}
 		}
 	}
