@@ -10,7 +10,7 @@ class ClientesModel extends CI_Model {
 	}	
 	public function obtenerClientes()
 	{               
-		$consulta = $this->db->query("SELECT * FROM cliente");
+		$consulta = $this->db->query("SELECT * FROM cliente ORDER BY nombres");
 		return $consulta->result();
 	}
 

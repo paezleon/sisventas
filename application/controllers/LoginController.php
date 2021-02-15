@@ -33,7 +33,7 @@ class LoginController extends CI_Controller {
 				);
 				
 				$this->session->set_userdata( $array );
-				$this->principal();
+				redirect(base_url('principal'),'refresh');
 			} else {
 				$this->session->set_flashdata('alerta', 'Credenciales ingresadas no son correctas');
 				$this->index();	

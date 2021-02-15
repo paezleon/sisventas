@@ -48,6 +48,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('cajas') ?>">Cajas</a>
 				</li>
+				<li class="nav-item">
+					<a class="btn btn-sm btn-primary" href="<?= base_url('manual.pdf') ?>" target='_blank'><i class="fas fa-file-pdf"></i> Manual de Usuario</a>
+				</li>
 			</ul>
 			<span class="navbar-text">
 				<a href="<?= base_url('cerrar_sesion') ?>"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>

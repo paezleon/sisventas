@@ -11,7 +11,7 @@ class CajasModel extends CI_Model {
 
 	public function obtenerCajas()
 	{
-		$consulta = $this->db->query("SELECT * FROM caja LEFT JOIN empleado on idempleado = empleado");
+		$consulta = $this->db->query("SELECT * FROM caja LEFT JOIN empleado ON idempleado = empleado");
 		return $consulta->result();
 	}
 
@@ -54,6 +54,13 @@ class CajasModel extends CI_Model {
 				return "nocorresponde";
 			}
 		}
+	}
+
+	public function obtenerCajasFiltro()
+	{
+		$empleado = $this->session->userdata('idEmpleado');
+		$consulta = $this->db->query("SELECT * FROM caja LEFT JOIN empleado ON idempleado = empleado WHERE empleado = $empleado AND fechaCierre is null");
+		return $consulta->result();
 	}
 
 }

@@ -58,7 +58,7 @@ class ProductosController extends CI_Controller {
 					$this->session->set_flashdata('correcto','Se ha registrado correctamente el producto '.mb_strtoupper($nombre));
 				} elseif($registro==false) {
 					$this->session->set_flashdata('alerta','No se realizaron registros ni modificaciones en los datos');
-				} elseif($registro==false) {
+				} elseif($registro=='existe') {
 					$this->session->set_flashdata('alerta','Ya existen esos datos');
 				}
 			} else {

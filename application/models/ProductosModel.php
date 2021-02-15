@@ -10,7 +10,7 @@ class ProductosModel extends CI_Model {
 	}	
 	public function obtenerProductos()
 	{               
-		$consulta = $this->db->query("SELECT * FROM producto");
+		$consulta = $this->db->query("SELECT * FROM producto ORDER BY nombres");
 		return $consulta->result();
 	}
 
@@ -45,6 +45,12 @@ class ProductosModel extends CI_Model {
 				return false;
 			}
 		}
+	}
+
+	public function obtenerProductosFiltro()
+	{
+		$consulta = $this->db->query("SELECT * FROM producto WHERE estado = 'D' AND stock > 0 ORDER BY nombres");
+		return $consulta->result();
 	}
 }
 

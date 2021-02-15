@@ -4,7 +4,7 @@
 <script src="<?= base_url('assets/fontawesome/js/all.min.js') ?>"></script>
 <script src="<?= base_url('assets/datatables/datatables.min.js') ?>"></script>
 <script>
-	$("table").dataTable({
+	$(".dataTable").dataTable({
 		dom: 'Bfrtip',
 		buttons: [
 		{
@@ -217,6 +217,48 @@
 		$("#txtCaja").val(id);
 		$("#txtMontoApertura").val(ma);
 		$("#txtMontoCierre").val(mc);
+	});
+
+
+	var total = 0;
+	var cant = 0;
+	var i = 0;
+	var h = "";
+	$("#btnAggProducto").click(function(event) {
+		var producto = $("#sltProducto").val();
+		var cantidad = $("#txtCantidad").val();
+		if (producto!="" && cantidad!="") {
+			var idproducto = producto.split('?')[0];
+			var nombre = producto.split('?')[1];
+			var precio = parseInt(producto.split('?')[2]);
+			var codigobarra = producto.split('?')[3];
+			total = total + (parseInt(precio) * parseInt(cantidad));
+			cant = cant + parseInt(cantidad);
+			h+='<tr class='+i+' value='+precio+'?'+cantidad+'>';
+			h+='<td> Cod: '+codigobarra+' - '+nombre+'<input type="hidden" name="txtProductoVenta[]" value="'+idproducto+'"></td>';
+			h+='<td>'+precio+'<input type="hidden" class="form-control" name="txtPrecioVenta[]" value="'+precio+'"></td>';
+			h+='<td>'+cantidad+'<input type="hidden" class="form-control" name="txtCantidadVenta[]" value="'+cantidad+'"></td>';
+			h+='<td><button type="button" class="elimVenta btn btn-danger btn-sm" value='+i+'><i class="fas fa-minus"></i></button></td>';
+			h+='</tr>';
+			$("#lstVenta").html(h);
+			$("#totalProducto").html(cant);
+			$("#totalVenta").html(total);
+			i++;
+			$(".elimVenta").click(function(event) {
+				h='';
+				var v = $(this).val();
+				var venta = $('.'+v).attr('value');
+				var preciov = venta.split('?')[0];
+				var cantidadv = venta.split('?')[1];
+				total = total - (parseInt(precio) * parseInt(cantidad));
+				cant = cant - parseInt(cantidad);
+				$("."+v).remove();
+				$("#totalProducto").html(cant);
+				$("#totalVenta").html(total);
+			});
+		} else {
+			alert('Debe indicar el producto a agregar y la cantidad');
+		}
 	});
 </script>
 </body>
